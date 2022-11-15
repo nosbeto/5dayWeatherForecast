@@ -9,7 +9,6 @@ saveBtn.on('click', function(event) {
     userInput = userInput.trim()
     // var userInput = $('#cityData').val()
     localStorage.setItem('cityData',userInput)
-
   });
 
 //Gets item from localStorage to be used in my code
@@ -19,12 +18,16 @@ let userInputFromLS =  localStorage.getItem('cityData')
 let api5dayForecast = 'http://api.openweathermap.org/data/2.5/forecast?q=' + userInputFromLS + '&units=imperial&appid=8b70d97613f963c4f438360db59ebce1'
 
 //It uses my constructed string to pull data from yhe 5day API
+function fetchingApi5day () {
 fetch(api5dayForecast)
 .then(response => response.json())
 .then(data => {
   apiCityRes = data;
-}); 
+});
+defineVar ()
+}
 
+function defineVar () {
 //store data about city into a variable to portray
 let apiCityPulled = apiCityRes.city.name
 
@@ -33,28 +36,40 @@ let apiCityPulled = apiCityRes.city.name
 let apiTempPulled0 = apiCityRes.list[0].main.temp
 let apiHumPulled0 = apiCityRes.list[0].main.humidity + ' %'
 let apiWindPulled0 = apiCityRes.list[0].wind.deg + ' MPH'
+//This is an object
+let apiWeatherDescPulled0 = apiCityRes.list[0].weather[0]
 //store API data of next day. using first time for simplicity
 let apiDatePulled6 = apiCityRes.list[6].dt_txt
 let apiTempPulled6 = apiCityRes.list[6].main.temp
 let apiHumPulled6 = apiCityRes.list[6].main.humidity + ' %'
 let apiWindPulled6 = apiCityRes.list[6].wind.deg + ' MPH'
+//This is an object
+let apiWeatherDescPulled6 = apiCityRes.list[6].weather[6]
+
 //store API data of next day. using first time for simplicity
 let apiDatePulled14 = apiCityRes.list[14].dt_txt
 let apiTempPulled14 = apiCityRes.list[14].main.temp
 let apiHumPulled14 = apiCityRes.list[14].main.humidity + ' %'
 let apiWindPulled14 = apiCityRes.list[14].wind.deg + ' MPH'
+//This is an object
+let apiWeatherDescPulled14 = apiCityRes.list[14].weather[14]
+
 //store API data of next day. using first time for simplicity
 let apiDatePulled22 = apiCityRes.list[22].dt_txt
 let apiTempPulled22 = apiCityRes.list[22].main.temp
 let apiHumPulled22 = apiCityRes.list[22].main.humidity + ' %'
 let apiWindPulled22 = apiCityRes.list[22].wind.deg + ' MPH'
+//This is an object
+let apiWeatherDescPulled22 = apiCityRes.list[22].weather[22]
+
 //store API data of next day. using first time for simplicity
 let apiDatePulled30 = apiCityRes.list[30].dt_txt
 let apiTempPulled30 = apiCityRes.list[30].main.temp
 let apiHumPulled30 = apiCityRes.list[30].main.humidity + ' %'
 let apiWindPulled30 = apiCityRes.list[30].wind.deg + ' MPH'
-
-
+//This is an object
+let apiWeatherDescPulled30 = apiCityRes.list[30].weather[30]
+}
 
 
 // //
