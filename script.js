@@ -32,7 +32,7 @@ function defineVar () {
 let apiCityPulled = apiCityRes.city.name
 
 //store API data of next day. using first time for simplicity
-
+let apiDatePulled0 = apiCityRes.list[0].dt_txt
 let apiTempPulled0 = apiCityRes.list[0].main.temp
 let apiHumPulled0 = apiCityRes.list[0].main.humidity + ' %'
 let apiWindPulled0 = apiCityRes.list[0].wind.deg + ' MPH'
