@@ -1,6 +1,8 @@
 # 5dayWeatherForecast
 Weather Forecast 
 
+![image](https://user-images.githubusercontent.com/114036566/202799757-ddbc1294-0d2a-4642-ae11-df17aefc38cf.png)
+
 
 ## Description
 
